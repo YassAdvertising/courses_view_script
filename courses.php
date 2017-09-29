@@ -23,7 +23,7 @@
           <h2 class='mb-5'><?php echo $oc['CourseName']; ?></h2>
           <span><i class='fa fa-clock-o'></i> <?php echo $oc['CourseDate']; ?></span>
           <p><?php echo $oc['CourseDesc'] ?></p>
-          <button class='btn btn-white mt-15' onclick='window.location.href = "view-course?course_id=<?php echo $oc['CourseID'] ?>"'><i class='fa fa-eye'></i> View Playlist</button>
+          <button class='btn btn-white mt-15' onclick='window.location.href = "view-course.php?course_id=<?php echo $oc['CourseID'] ?>"'><i class='fa fa-eye'></i> View Playlist</button>
         </div>
 
       </section>
