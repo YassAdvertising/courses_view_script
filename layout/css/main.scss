@@ -1,0 +1,485 @@
+$mainColor: #3498db;
+
+@for $i from 1 through 50 {
+  .fs-#{$i} {
+    font-size: #{$i}px;
+  }
+}
+
+/* On Load Div */
+.on-load {
+  position: fixed;
+  // transition: 5s;
+  top: 0;
+  left: 0;
+  transform: scale(1);
+  z-index: 999999999999999999999999999999999999999999;
+  background: url('../images/Photo2.jpg') center center;
+  width: 100vw;
+  height: 100vh;
+  text-align: center;
+  h1 {
+    font-size: 2.5em;
+    font-weight: 100;
+    line-height: 16em;
+    color: #fff;
+  }
+}
+
+/* Introducation */
+.introducation {
+  background: url('../images/shot2-p4.jpg') center center;
+  width: 99.6vw;
+  height: 105vh;
+  position: relative;
+  top: -190px;
+  overflow: hidden;
+  .over-lay {
+    position: absolute;
+    width: 100%;
+    padding: 185px 25px;
+    color: #FFf;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(1, 1, 1, .8);
+    > h1 {
+      font-family: 'Josefin Sans';
+      font-size: 4em;
+    }
+    .text {
+      margin-left: 85px;
+      h3 {
+        line-height: 2.4em;
+        font-size: 35px;
+        font-family: 'Josefin Sans';
+        text-transform: uppercase;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+/* Courses Page */
+.courses-container {
+  width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  .course { // Course Main Parent
+    position: relative;
+    width: 27%;
+    margin-bottom: 25px;
+    background-color: #FFF;
+    // Course Header
+    .header {
+      padding: 10px;
+      text-align: center;
+      background-color: $mainColor;
+      color: #FFF;
+      h2 {
+        font-weight: 100;
+        font-family: 'Source Sans Pro', sans-serif;
+        line-height: 5em;
+      }
+    }
+    // Course Content
+    .course-content {
+      padding: 10px 25px;
+      box-shadow: -1px 1px 1px darkgrey;
+      h2 {
+        opacity: 0.7;
+        font-weight: 900;
+        font-family: 'Source Sans Pro';
+      }
+      span {
+        display: block;
+        margin-bottom: 10px;
+        color: gray;
+        font-size: 15px;
+      }
+      p {
+        max-width: 900px;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        white-space: nowrap;
+      }
+      button {
+        border-color: $mainColor;
+        border-radius: 0;
+        font-family: 'Roboto';
+        color: $mainColor;
+        &:hover {
+          background-color: $mainColor;
+          color: #FFF;
+        }
+      }
+    }
+  }
+}
+
+/* Controller + Follow Page */
+.controller {
+  padding: 10px;
+  width: 95%;
+  margin: 50px auto;
+  margin-bottom: 4px;
+  .container {
+    width: 45%;
+    margin: -10px auto;
+    .controller-header {
+      background-color: #34495e;
+      padding: 10px;
+      height: 150px;
+      text-align: center;
+      color: #FFF;
+      h3 { font-size: 2em; line-height: 3.8em; font-weight: 100; font-family: 'Raleway'; }
+    }
+    .controller-content {
+      // padding: 10px;
+      box-shadow: 0px 2px 1px #a2a2a2;;
+      background-color: #FFF;
+      h2 {
+        span {
+          font-weight: bold;
+          color: #000;
+          opacity: 1;
+        }
+      }
+      h2 ~ hr {
+        border: 1.5px solid #222;
+        width: 25%;
+        margin: 2px auto;
+        border-radius: 70px;
+        opacity: 0.7;
+      }
+      h3 {
+        a {
+          color: #333;
+          padding: 10px 0 10px 25px;
+          display: block;
+          margin: 5px 0;
+          font-weight: 100;
+          font-family: 'Open Sans';
+          transition: 0.5s;
+          &:hover {
+            background-color: #222;
+            color: #FFF;
+            box-shadow: 1px 3px 4px #8a8a8a;
+            border-right: 3px solid #2980b9;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* About me page */
+.about {
+  display: flex;
+  width: 1400px;
+  margin: auto;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  div {
+    width: 22%;
+    text-align: center;
+    i {
+      font-size: 1.8em;
+      color: #e74c3c;
+      margin-bottom: 15px;
+      transform: scale(1.2);
+    }
+    h3 {
+      font-weight: 100;
+      color: #444;
+      margin: 15px 0;
+      font-size: 2em;
+    }
+    p {
+      line-height: 1.3em;
+      color: #666;
+    }
+  }
+}
+
+/* View Course Page */
+.view-course {
+  .course {
+    iframe {
+      position: absolute;
+      margin-left: auto; margin-right: auto;
+      left: 0;
+      right: 0;
+      width: 75%;
+      height: 390px;
+      border: none;
+    }
+  }
+  .desc {
+    .print-desc {
+      background-color: #fff;
+      width: 35%;
+      margin-left: 25px;
+      .header {
+        background-color: $mainColor;
+        padding: 10px;
+        h3 { font-weight: 100; color: #fff; }
+      }
+      .content {
+        padding: 10px;
+        background-color: #FFF;
+        h3 { font-weight: 100; font-family: 'Source Sans Pro', sans-serif; margin: 10px 0; span { font-weight: bold; color: #4b4b4b; } }
+        hr {
+          border-color: rgba(241, 241, 241, 0.33);
+        }
+      }
+    }
+  }
+}
+
+/* Create New Account */
+.new-account {
+  width: 50%;
+  margin: auto;
+  background-color: #fff;
+  padding: 10px;
+  box-shadow: 0px 4px 1px #eaeaea;
+  text-align: center;
+  form {
+    input {
+      width: 95%;
+      border-radius: 3px;
+      transition: none;
+      &:focus { box-shadow: none; outline: 2px solid #3498db; }
+    }
+    button {
+      float: left;
+      margin-left: 1em;
+      width: 95%;
+      padding: 12px;
+      font-family: 'Raleway'
+    }
+    a {
+      text-align: left;
+      margin-left: 1.1em;
+      display: block;
+      margin-top: 12px;
+    }
+  }
+}
+
+.reg-error,
+.reg-success {
+  color: #FFF;
+  font-family: 'Source Sans Pro';
+  width: 98%;
+}
+.reg-error   { background-color: #e74c3c; }
+.reg-success { background-color: #2ecc71; }
+
+/* Contact Form */
+.contact-form {
+  padding: 10px;
+  text-align: center;
+  width: 50%;
+  margin: auto;
+  input, textarea {
+    display: block;
+    width: 95%;
+    font-family: 'Roboto';
+    margin-bottom: 16px;
+    border-radius: 1px;
+    &:focus {
+      box-shadow: 0px 0px 4px 1px #34a99e;
+    }
+  }
+  textarea { margin-bottom: 5px; height: 100px; }
+  button {
+    float: left;
+    margin-left: .68em;
+    font-family: 'Source Sans Pro';
+    padding: 15px;
+  }
+}
+
+/* Profile Page */
+
+// Edit Profile Tool - Open Model Of Edit Profile
+.edit-profile-tool {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  i {
+    cursor: pointer;
+    background-color: #3498db;
+    padding: 10px;
+    text-align: center;
+    color: #FFF;
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    line-height: 2.20em;
+    transition: 0.6s;
+    box-shadow: 0px 2px 2px #8c8686;
+    &:hover {
+      background-color: #2980b9;
+    }
+  }
+}
+
+// Edit Profile Model
+.edit-profile-model {
+  position: fixed;
+  background-color: #fff;
+  transition: 0.5s;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999999;
+  left: 0;
+  top: 0;
+  transform: scale(0, 0);
+  overflow: auto;
+  .header {
+    padding: 19px;
+    background-color: $mainColor;
+    h1, > i {
+      float: left;
+      color: #fff;
+    }
+    > i {
+      position: absolute;
+      right: 25px;
+      top: 20px;
+      cursor: pointer;
+    }
+    h1 {
+      font-size: 1.5em;
+    }
+  }
+  .content {
+    padding: 15px 25px;
+    span {
+      display: block;
+      margin: 12px 0 0 10px;
+      font-weight: bold;
+      color: #655d5d;
+      &:first-child { margin-top: 50px; }
+    }
+    input,
+    textarea {
+      border: 1px solid #cecece;
+      border-radius: 0;
+      font-family: 'Roboto';
+      &:focus {
+        box-shadow: none;
+        border-color: #3498db;
+      }
+    }
+    textarea {
+      height: 125px;
+    }
+    button {
+      margin-left: .7%;
+      &:last-child {
+        margin-left: -5px;
+      }
+    }
+  }
+}
+.transform-scale { transform: scale(1, 1); }
+.transform-scale0 { transform: scale(0, 0); }
+
+
+@media (max-width: 890px) {
+
+  /* Follow Me #1 Page */
+  .controller {
+    width: 100%;
+    margin: auto;
+    .container {
+      width: 85%;
+      margin: 10px auto;
+    }
+  }
+
+  /* Contact Form #2 Page */
+  .contact-form {
+    width: 100%;
+  }
+
+  /* Courses Page #3 */
+  .courses-container {
+    width: 100%;
+    margin: 0;
+    .course {
+      display: block;
+      margin: 10px auto;
+      width: 75%;
+    }
+  }
+
+  .about {
+    display: block;
+    width: 100%;
+    margin: 0;
+    div {
+      width: 95%;
+      margin: auto;
+      margin-bottom: 35px;
+      p {
+        max-width: 65%;
+        margin: auto;
+      }
+    }
+  }
+
+  .new-account {
+    width: 85%;
+  }
+
+}
+
+@media (min-width: 890px) and (max-width: 1400px) {
+  .about {
+    display: flex;
+    width: 100%;
+    margin: auto;
+    flex-wrap: wrap !important;
+    div {
+      width: 45%;
+      margin-bottom: 15px;
+      p {
+        max-width: 65%;
+        margin: auto;
+      }
+    }
+  }
+  .controller {
+    width: 100%;
+    margin: auto;
+    .container {
+      width: 65%;
+      margin: 10px auto;
+    }
+  }
+  .courses-container {
+    width: 100%;
+    margin: 0;
+    display: flex;
+    .course {
+      margin: auto;
+      width: 45%;
+    }
+  }
+
+  .new-account {
+    width: 75%;
+  }
+
+  .contact-form {
+    width: 68%;
+  }
+}
