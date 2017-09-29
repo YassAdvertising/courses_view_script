@@ -1,0 +1,813 @@
+@import '_import.scss';
+
+/* Dashboard Page */
+.dashboard {
+  text-align: center;
+  > h1 {
+    font-size: 2.8em;
+    margin: 15px 0;
+  }
+  .stats {
+    @include flex-box(wrap, space-around, flex-start);
+    div {
+      @include border-radius(4px);
+      @include transition(0.5s);
+      @include setCursor(pointer);
+      width: 24%;
+      background-color: $red;
+      padding: 15px 15px 25px;
+      color: #fff;
+      text-align: left;
+      &:hover { background-color: $redd; }
+      > h1 {
+        @include setLight();
+        @extend %uppercase, %ubuntu;
+        font-size: 1.5em;
+        padding: 15px 25px;
+        i { font-size: 2em; margin-right: 5px; }
+      }
+      h3 {
+        text-align: center;
+      }
+      // Setting Colors
+      &:nth-child(2) { background-color: $green; &:hover { background-color: #16a085; } }
+      &:nth-child(3) { background-color: $blue; &:hover { background-color: #2980b9; } }
+      &:nth-child(4) { background-color: $orange; &:hover { background-color: #f39c12; } }
+      &:hover:after  { background-color: $mcd; border-radius: 1px; }
+      &:hover:before { border-top-color: $mcd; }
+    }
+  }
+  > hr { margin: 45px 25px 25px; border: 1px solid #f1f1f1; }
+}
+
+/* Controllers - Manage Page */
+.controllers-manage {
+  > h1 { @extend %sectionHeading; }
+  table {
+    tr {
+      th { background-color: $mcd; }
+      td {
+        padding: 15px;
+        a.btn {
+          &:hover { color: #FFF; }
+          &:hover:after {
+            left: -21px;
+            background-color: #f13420;
+            width: 80px;
+          }
+          &:hover:before {
+            left: 7px;
+            border-top-color: #f13420;
+          }
+        }
+      }
+      td.social-media {
+        a {
+          i {
+            @include transition(.5s);
+            font-size: 1.5em;
+            background-color: #f1f1f1;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2.2em;
+            color: #fff;
+            &:hover { opacity: 0.5; }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Controller View Page */
+.controller-view {
+  background-color: #fff;
+  width: 75%;
+  margin: 25px auto;
+  border-radius: 5px;
+  header {
+    background-color: $mcd;
+    padding: 15px 25px;
+    position: relative;
+    border-radius: 2px;
+    height: 82px;
+    i {
+      @include setCursor(pointer);
+      @include transition(0.5s);
+      @include setLight();
+      @include border-radius(50%);
+      color: #FFF;
+      width: 55px;
+      height: 55px;
+      text-align: center;
+      line-height: 1.9em;
+      font-size: 1.8em;
+      -webkit-text-stroke: 1px white;
+      &:hover {
+        background-color: $mc;
+      }
+    }
+    i.right { position: absolute; right: 25px; }
+  }
+  .content {
+    padding: 15px;
+    h1 {
+      @extend %ubuntu;
+      font-size: 2em;
+      color: #444;
+      span { font-size: 18px; }
+    }
+    h2 {
+      @include setLight();
+      color: #888;
+      padding: 5px 15px;
+      font-size: 1em;
+    }
+    a {
+      i {
+        @include transition(.5s);
+        font-size: 1.3em;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 2.2em;
+        color: #fff;
+        margin-top: 8px;
+        &:hover { opacity: 0.7; }
+      }
+    }
+  }
+}
+
+/* Controller Edit Page */
+.controller-edit {
+  > h1 { @extend %sectionHeading; }
+  form {
+    width: 45%;
+    margin: auto;
+    span {
+      display: block;
+      margin-top: 15px;
+    }
+    input,
+    select {
+      display: block;
+      margin: 5px 0;
+      width: 95%;
+    }
+    button {
+      @extend %ubuntu;
+      padding: 15px;
+    }
+  }
+}
+
+/* Controller New User Page */
+.new-controller {
+  > h1 { @extend %sectionHeading; }
+  form {
+    width: 45%;
+    margin: auto;
+    input {
+      display: block;
+      margin: 15px 0;
+      width: 95%;
+      &:hover,
+      &:focus { border-color: $blue; }
+    }
+    button {
+      @extend %ubuntu;
+      padding: 15px;
+    }
+  }
+}
+
+/* Messages Page */
+.messages-controller {
+  h1 { @extend %sectionHeading; }
+  table {
+    tr {
+      th { background-color: $mcd; }
+      td {
+        padding: 15px;
+        a {
+          &:hover { color: #FFF; }
+          &:hover:after {
+            left: -21px;
+            background-color: #f13420;
+            width: 80px;
+          }
+          &:hover:before {
+            left: 7px;
+            border-top-color: #f13420;
+          }
+        }
+      }
+    }
+  }
+}
+
+h1.viewmsgtext { @extend %sectionHeading; text-align: center; span { font-weight: 100; text-transform: none; } }
+/* View Message Page */
+.view-message {
+  width: 75%;
+  margin: 25px auto;
+  background-color: #FFF;
+  .header {
+    padding: 15px;
+    background-color: $mcd;
+    color: #FFF;
+    h2 {
+      @include setLight();
+      margin: 15px;
+    }
+    span {
+      display: block;
+      margin: 0 15px;
+    }
+  }
+  .content {
+    padding: 15px;
+    h3 {
+      font-size: 1.8em;
+      margin: 5px;
+    }
+    p {
+      max-width: 680px;
+      margin: 0 15px;
+    }
+  }
+}
+
+/* Users - Manage Page */
+.users-manage {
+  > h1 { font-size: 2.5em; }
+  table {
+    tr {
+      th { background-color: $mcd; }
+      td {
+        padding: 15px;
+        a.btn {
+          &:hover { color: #FFF; }
+          &:hover:after {
+            left: -21px;
+            background-color: #f13420;
+            width: 80px;
+          }
+          &:hover:before {
+            left: 7px;
+            border-top-color: #f13420;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Users Edit Page */
+.user-edit {
+  > h1 { @extend %sectionHeading; }
+  form {
+    width: 45%;
+    margin: auto;
+    span {
+      display: block;
+      margin-top: 15px;
+    }
+    input,
+    select {
+      display: block;
+      margin: 5px 0;
+      width: 95%;
+    }
+    button {
+      @extend %ubuntu;
+      padding: 15px;
+    }
+  }
+}
+
+/* Controller New User Page */
+.new-user {
+  > h1 { @extend %sectionHeading; }
+  form {
+    width: 45%;
+    margin: auto;
+    input {
+      display: block;
+      margin: 15px 0;
+      width: 95%;
+      &:hover,
+      &:focus { border-color: $blue; }
+    }
+    button {
+      @extend %ubuntu;
+      padding: 15px;
+    }
+  }
+}
+/* User View Page */
+.user-view {
+  background-color: #fff;
+  width: 75%;
+  margin: 25px auto;
+  border-radius: 5px;
+  header {
+    background-color: $mcd;
+    padding: 15px 25px;
+    position: relative;
+    border-radius: 2px;
+    height: 82px;
+    i {
+      @include setCursor(pointer);
+      @include transition(0.5s);
+      @include setLight();
+      @include border-radius(50%);
+      color: #FFF;
+      width: 55px;
+      height: 55px;
+      text-align: center;
+      line-height: 1.9em;
+      font-size: 1.8em;
+      -webkit-text-stroke: 1px white;
+      &:hover {
+        background-color: $mc;
+      }
+    }
+    i.right { position: absolute; right: 25px; }
+  }
+  .content {
+    padding: 15px;
+    h1 {
+      @extend %ubuntu;
+      font-size: 2em;
+      color: #444;
+      span { font-size: 18px; }
+    }
+    h2 {
+      @include setLight();
+      color: #888;
+      padding: 5px 15px;
+      font-size: 1em;
+    }
+    a {
+      i {
+        @include transition(.5s);
+        font-size: 1.3em;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 2.2em;
+        color: #fff;
+        margin-top: 8px;
+        &:hover { opacity: 0.7; }
+      }
+    }
+    h4 {
+      line-height: 2.2em;
+      font-weight: 100;
+      color: #4c4c4c;
+    }
+  }
+}
+
+/* Profile Page */
+.profile {
+  display: flex;
+  align-items: flex-start;
+}
+.profile-right {
+  width: 85% !important;
+  position: relative;
+  z-index: 999;
+  margin-left: 20em;
+  padding: 15px;
+  text-align: center;
+  h1 { font-weight: 100; margin-bottom: 25px; }
+  .latest {
+    @include flex-box(wrap, space-around, flex-start);
+    section {
+      width: 45%;
+      margin-bottom: 25px;
+      .header {
+        @include transition(0.5s);
+        background-color: rgba(214, 214, 214, 0.49);
+        padding: 15px;
+        width: 105%;
+        text-align: left;
+        cursor: pointer;
+        position: relative;
+        h3 {
+          font-weight: 100;
+          i {
+            position: absolute;
+            right: 15px;
+            top: 18px;
+          }
+        }
+        &:hover {
+          background-color: #222;
+          color: #FFF;
+        }
+      }
+      .content {
+        padding: 15px;
+        background-color: #FFF;
+        width: 105%;
+        text-align: left;
+        h3 {
+          @extend %ubuntu;
+          font-weight: 100;
+          font-size: 21px;
+          margin-top: 15px;
+          &:first-child { margin-top: 0; }
+        }
+        span {
+          margin-left: 4px;
+          color: #aaa;
+        }
+      }
+    }
+  }
+}
+.profile-left {
+  position: absolute;
+  width: 98%;
+  .first, .bottom {
+    margin: 25px;
+    width: 23%;
+    padding: 15px;
+    text-align: center;
+    background-color: #FFF;
+    box-shadow: 0px 3px 4px #a7a6a6;
+    img {
+      @include border-radius(50%);
+      width: 150px;
+      height: 150px;
+      margin-bottom: 15px;
+    }
+    > h2 {
+      @extend %ubuntu;
+      font-weight: 100;
+      margin-bottom: 8px;
+    }
+    a.btn {
+      display: block;
+      width: 150px;
+      margin: 10px auto;
+      &:hover { color: #333; }
+    }
+  }
+  .bottom {
+    text-align: left;
+    h3 {
+      @include setBold();
+      @extend %uppercase;
+      color: gray;
+    }
+    .content {
+      h4 {
+        &:first-child { margin-top: 15px; }
+        @include setLight();
+        margin: 5px 14px;
+        line-height: 1.5em;
+        color: #524e4e;
+      }
+    }
+  }
+}
+
+/* Courses Page */
+.courses-manage {
+  > h1 { font-size: 2.5em; }
+  table {
+    tr {
+      th { background-color: $mcd; }
+      td {
+        padding: 15px;
+        a.btn {
+          &:hover { color: #FFF; }
+          &:hover:after {
+            left: -21px;
+            background-color: #f13420;
+            width: 80px;
+          }
+          &:hover:before {
+            left: 7px;
+            border-top-color: #f13420;
+          }
+        }
+      }
+      td.social-media {
+        a {
+          i {
+            @include transition(.5s);
+            font-size: 1.5em;
+            background-color: #f1f1f1;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 2.2em;
+            color: #fff;
+            &:hover { opacity: 0.5; }
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Controller View Page */
+.courses-view {
+  background-color: #fff;
+  width: 75%;
+  margin: 25px auto;
+  border-radius: 5px;
+  header {
+    background-color: $mcd;
+    padding: 15px 25px;
+    position: relative;
+    border-radius: 2px;
+    height: 82px;
+    i {
+      @include setCursor(pointer);
+      @include transition(0.5s);
+      @include setLight();
+      @include border-radius(50%);
+      color: #FFF;
+      width: 55px;
+      height: 55px;
+      text-align: center;
+      line-height: 1.9em;
+      font-size: 1.8em;
+      -webkit-text-stroke: 1px white;
+      &:hover {
+        background-color: $mc;
+      }
+    }
+    i.right { position: absolute; right: 25px; }
+  }
+  .content {
+    padding: 15px;
+    h1 {
+      @extend %ubuntu;
+      font-size: 2em;
+      color: #444;
+      span { font-size: 18px; }
+    }
+    h2 {
+      @include setLight();
+      color: #888;
+      padding: 5px 15px;
+      font-size: 1em;
+    }
+    a {
+      i {
+        @include transition(.5s);
+        font-size: 1.3em;
+        width: 45px;
+        height: 45px;
+        border-radius: 50%;
+        text-align: center;
+        line-height: 2.2em;
+        color: #fff;
+        margin-top: 8px;
+        &:hover { opacity: 0.7; }
+      }
+    }
+  }
+}
+
+/* Controller Edit Page */
+.courses-edit {
+  > h1 { @extend %sectionHeading; }
+  form {
+    width: 45%;
+    margin: auto;
+    span {
+      display: block;
+      margin-top: 15px;
+    }
+    input,
+    select,
+    textarea {
+      display: block;
+      margin: 10px 0;
+      width: 95%;
+      font-family: 'Ubuntu'
+    }
+    textarea {
+      height: 150px;
+    }
+    button {
+      @extend %ubuntu;
+      padding: 15px;
+    }
+  }
+}
+
+/* Controller New User Page */
+.new-course {
+  > h1 { @extend %sectionHeading; }
+  form {
+    width: 45%;
+    margin: auto;
+    input,textarea {
+      display: block;
+      margin: 15px 0;
+      width: 95%;
+      &:hover,
+      &:focus { border-color: $blue; }
+    }
+    textarea {
+      font-family: 'Roboto';
+      height: 120px;
+    }
+    button {
+      @extend %ubuntu;
+      padding: 15px;
+    }
+  }
+}
+
+.message-view {
+  width: 70%;
+  margin: 5px auto;
+  background-color: #FFF;
+  .header {
+    color: #FFF;
+    background-color: $mcd;
+    padding: 20px 35px;
+    h2 { font-weight: 100; }
+    span { display: block; margin-top: 10px; }
+  }
+  .content {
+    padding: 35px;
+    h3 {
+      font-weight: 3em !important;
+      margin-bottom: 5px;
+    }
+  }
+}
+
+.edit-profile {
+  h1 {
+    @extend %sectionHeading;
+  }
+  form {
+    width: 45%;
+    margin: auto;
+    span {
+      display: block;
+      margin-top: 15px;
+    }
+    input,
+    select,
+    textarea {
+      display: block;
+      margin: 10px 0;
+      width: 95%;
+      font-family: 'Ubuntu'
+    }
+    textarea {
+      height: 150px;
+    }
+    button {
+      @extend %ubuntu;
+      padding: 15px;
+    }
+  }
+}
+
+/* Responsipility */
+@media (max-width: 850px) {
+
+  .navbar {
+    position: relative !important;
+    li.open-navbar {
+      display: block !important;
+    }
+    .hidden {
+      display: none;
+      width: 100vw;
+      position: fixed;
+      top: 77px !important;
+      left: 0;
+      background-color: $mcd;
+      z-index: 999999;
+      border-top: 3px solid $blue;
+      ul {
+        display: block !important;
+        li {
+          width: 100% !important;
+          display: block !important;
+          float: none !important;
+        }
+      }
+    }
+  }
+
+  .messages-controller {
+    > h1 {
+      font-size: 1.5em;
+    }
+    table {
+      overflow: auto;
+      width: 95%;
+      margin: auto;
+    }
+  }
+
+  .dashboard {
+    .stats {
+      div {
+        width: 45%;
+        margin-bottom: 15px;
+        h1 {
+          font-size: 1em;
+        }
+      }
+    }
+  }
+
+  .user-edit,
+  .controller-edit,
+  .courses-edit,
+  .new-user,
+  .new-controller,
+  .new-course {
+    form {
+      width: 85%;
+      input {
+        width: 97% !important;
+      }
+    }
+  }
+
+}
+
+@media (max-width: 650px) {
+  .profile {
+    display: block;
+  }
+  .profile-left { position: relative; }
+  .first, .bottom {
+    width: 95% !important;
+    margin: auto;
+  }
+  .profile-right {
+    margin-left: 0;
+    h1 {
+      display: none;
+    }
+    .latest {
+      position: relative;
+      display: block;
+      section {
+        width: 95%;
+        margin: 15px auto;
+        .content {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 785px) and (max-width: 1000px) {
+  .profile {
+    display: block;
+    .profile-left {
+      position: relative;
+      @include flex-box(flex, space-around, center);
+      div {
+        width: 45%;
+
+      }
+    }
+
+    .profile-right {
+      position: relative;
+      margin-left: 0;
+      > h1 {
+        display: none;
+      }
+      .latest {
+        display: block;
+        section {
+          width: 100%;
+          margin: 5px auto;
+          .content {
+            display: none;
+          }
+        }
+      }
+    }
+  }
+
+}

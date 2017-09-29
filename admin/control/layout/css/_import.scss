@@ -1,0 +1,90 @@
+/* Colors, Mixins, Font Family and Placeholder Selectors */
+$mc: #34495e;
+$mcd: #2c3e50;
+$red: #e74c3c;
+$redd: #c0392b;
+$blue: #3498db;
+$orange: #f1c40f;
+$green: #1abc9c;
+$roboto: 'Roboto';
+$raleway: 'Raleway';
+$ssp: 'Source Sans Pro';
+$open-sans: 'Open Sans';
+$lobster: 'Lobster';
+
+// ## Placeholders ## //
+%unstyled-list         { list-style: none; }
+%uppercase             { text-transform: uppercase; }
+%ubuntu                { font-family: 'Ubuntu'; }
+%roboto                { font-family: 'Roboto'; }
+
+// ## Mixins ## //
+@mixin font-size($size) { font-size: $size; }
+@mixin setDisplay($display-value) { display: $display-value; }
+@mixin setPosition($position-prop) { position: $position-prop; }
+@mixin setLight()      { font-weight: 100; }
+@mixin setBold()       { font-weight: bold; }
+@mixin setWeight($we)  { font-weight: $we; }
+@mixin fontFamily($ff) { font-weight: $ff; }
+@mixin setCursor($cur) { cursor: $cur; }
+@mixin transition($trans) {
+  -webkit-transition: $trans;
+  -moz-transition: $trans;
+  -ms-transition: $trans;
+  -o-transition: $trans;
+  transition: $trans;
+}
+@mixin border-radius($radius-value) {
+  -webkit-border-radius: $radius-value;
+  -moz-border-radius: $radius-value;
+  -ms-border-radius: $radius-value;
+  -o-border-radius: $radius-value;
+  border-radius: $radius-value;
+}
+@mixin set-Transform-Proparty($transform-value) {
+  -webkit-transform: $transform-value;
+  -moz-transform: $transform-value;
+  -ms-transform: $transform-value;
+  -o-transform: $transform-value;
+  transform: $transform-value;
+}
+@mixin position($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+@mixin flex-box($flex-wrap, $flex-justify-content, $flex-align-items) {
+  @include setDisplay(flex);
+  flex-wrap: $flex-wrap;
+  justify-content: $flex-justify-content;
+  align-items: $flex-align-items;
+}
+@mixin box-shadow($shadow-value) {
+  -webkit-box-shadow: $shadow-value;
+  -moz-box-shadow: $shadow-value;
+  -ms-box-shadow: $shadow-value;
+  -o-box-shadow: $shadow-value;
+}
+
+@keyframes move {
+  0%   { bottom: 25px; }
+  100% { bottom: 35px; }
+}
+
+%sectionHeading {
+  @include setBold();
+  @extend %uppercase;
+  margin: 25px;
+  font-size: 2.5em;
+  text-align: center;
+  color: $mcd;
+  font-family: 'Ubuntu';
+}
+
+// Social media colors
+$facebook: #3b5998;
+$google-plus: #555;
+$twitter: #1da1f2;
+$instagram: #833ab4;
+$youtube: #cd201f;
