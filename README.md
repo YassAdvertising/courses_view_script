@@ -1,0 +1,1 @@
+# courses_view_script
