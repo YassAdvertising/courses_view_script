@@ -12,5 +12,18 @@
   - Enter your informations<br>
   Notice: <strong><code>Password must be hashed to <i>sha1()</i></code></strong>
 
-  <h5>Go to <code>host/cousres/admin/</code></h5><br>
+  <h5>Go to <code>host/cousres/admin/</code></h5>
   Enter your username and your password
+  
+  # Admin Control Panel Features
+   - users_actions: ['Edit', 'Delete', 'New', 'View']
+   - courses_actions: @extend user_actions
+   - controller_actions: @extend user_actions
+   - Messages ( Contact Form )
+   - Admin Profile
+   - Admin Edit Informations
+   
+  # Admin Informations 
+   - Social Media Accounts
+   - Username, Fullname, Password, Email
+   - Edit job, college
